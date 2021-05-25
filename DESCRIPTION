@@ -1,0 +1,17 @@
+Package: ideamR
+Type: Package
+Title: Tools for hydrometeorological data management from DHIME (IDEAM,
+        Colombia)
+Version: 0.1.0
+Author: Geomar Perales Apaico
+Maintainer: Geomar Perales Apaico, <perales.geomar@gmail.com>
+Description: ideamR is a package for hydrometeorological data management from DHIME (IDEAM, Colombia).
+ DHIME is Information System for the management of Hydrological and Meteorological data from COlombia.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Date/Publication: 2021-05-26
+RoxygenNote: 7.1.1
+Depends: R (>= 2.10)
+NeedsCompilation: no
+Packaged: 2021-05-25 03:43:40 UTC; gperales
