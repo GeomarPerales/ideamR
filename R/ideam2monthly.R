@@ -35,10 +35,12 @@ ideam2monthly <- function(x, param = NULL, na.rm = NULL){
   if(is.null(na.rm)){
     x[is.na(x$values),][,2] <- 0
     values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
+    values.sum <- data.frame(values.sum, stringsAsFactors = FALSE)
 
   } else if(isTRUE(na.rm)){
     x[is.na(x$values),][,2] <- 0
     values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
+    values.sum <- data.frame(values.sum, stringsAsFactors = FALSE)
 
   } else if(!isTRUE(na.rm)){
     values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
