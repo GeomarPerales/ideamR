@@ -7,11 +7,14 @@
 #' @param na.rm default value is TRUE, TRUE for consider NA, FALSE for not consider NA.
 #' @import stats
 #' @export
+#'
+#' @author Geomar Perales Apaico
+#'
 #' @name ideam2annual
 
 ideam2annual <-function(x, ...) UseMethod("ideam2annual")
 
-ideam2annual <- function(x, param = NULL, na.rm = TRUE){
+ideam2annual <- function(x, param = NULL, na.rm = NULL){
 
   if(is.null(x)){
     stop("values not recognized")
@@ -32,9 +35,14 @@ ideam2annual <- function(x, param = NULL, na.rm = TRUE){
   }
 
   date = strftime(x$date, "%Y")
-  if(isTRUE(na.rm)){
+  if(is.null(na.rm)){
+    x[is.na(x$values),][,2] <- 0
+    annual.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
+
+  } else if(isTRUE(na.rm)){
     x[is.na(x$values),][,2] <- 0
     annual.sum <- aggregate( as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
+
   } else if(!isTRUE(na.rm)){
     annual.sum <- aggregate( as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
   }

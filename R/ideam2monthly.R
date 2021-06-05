@@ -11,7 +11,7 @@
 
 ideam2monthly <-function(x, ...) UseMethod("ideam2monthly")
 
-ideam2monthly <- function(x, param = NULL, na.rm = TRUE){
+ideam2monthly <- function(x, param = NULL, na.rm = NULL){
 
   if(is.null(x)){
     stop("values not recognized")
@@ -30,11 +30,18 @@ ideam2monthly <- function(x, param = NULL, na.rm = TRUE){
   }
 
   date <- strftime(x$date, "%Y-%m")
-  if(isTRUE(na.rm)){
+
+  if(is.null(na.rm)){
     x[is.na(x$values),][,2] <- 0
     values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
+
+  } else if(isTRUE(na.rm)){
+    x[is.na(x$values),][,2] <- 0
+    values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
+
   } else if(!isTRUE(na.rm)){
     values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
+
   }
 
   colnames(values.sum) <- c("date","values")
