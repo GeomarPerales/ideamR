@@ -9,7 +9,7 @@ ideam2annual(x, param = NULL, na.rm = TRUE)
 \arguments{
 \item{x}{dataframe of prepared data of a station from DHIME (IDEAM, Colombia)}
 
-\item{param}{default value is sum, sum is for precipitation, mean for temperature.}
+\item{param}{default value is sum, sum is for precipitation and evaporation, mean for temperature and relative humidity.}
 
 \item{na.rm}{default value is TRUE, TRUE for consider NA, FALSE for not consider NA.}
 }

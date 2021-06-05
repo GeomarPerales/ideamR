@@ -4,10 +4,15 @@
 \alias{ideamprep}
 \title{function for prepare data from DHIME (IDEAM, Colombia)}
 \usage{
-ideamprep(x)
+ideamprep(x, level = NULL)
 }
 \arguments{
 \item{x}{dataframe of a station from DHIME (IDEAM, Colombia).}
+
+\item{level}{information level of dataframe, default information is standard.
+standard: dataframe of date, station, parameter and parameter values
+basic: dataframe of date and parameter values
+advanced: dataframe of date, station, parameter, latitude, longitude, height and parameter values}
 }
 \description{
 function for prepare data from DHIME (IDEAM, Colombia), apply to precipitation,
