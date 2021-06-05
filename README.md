@@ -16,16 +16,6 @@ Step 2: From Github:
 > library(devtools)
 > install_github("GeomarPerales/ideamR")
 ```
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(ideamR)
-```
-## Note
-
-
 
 ## Credits
 
