@@ -16,12 +16,6 @@ ideam2annual <- function(x, param = NULL, na.rm = TRUE){
   if(is.null(x)){
     stop("values not recognized")
   }
-  if(is.null(x$values)){
-    stop("values not recognized")
-  }
-  if(is.null(x$date)){
-    stop("date not recognized")
-  }
 
   if(is.null(param)){
     opt = "sum"

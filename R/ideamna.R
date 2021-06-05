@@ -13,12 +13,6 @@ ideamna <- function(x, type = NULL){
   if(!is.data.frame(x)){
     stop("values not recognized")
   }
-  if(is.null(x$values)){
-    stop("values not recognized")
-  }
-  if(is.null(x$date)){
-    stop("date not recognized")
-  }
 
   x$value[x$values >= 0] <- 1
   x$value[is.na(x$values)] <- 0
