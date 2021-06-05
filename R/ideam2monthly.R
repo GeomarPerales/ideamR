@@ -13,6 +13,7 @@ ideam2monthly <-function(x, ...) UseMethod("ideam2monthly")
 
 ideam2monthly <- function(x, param = NULL, na.rm = NULL){
 
+  x <- data.frame(x, stringsAsFactors = FALSE)
   if(is.null(x)){
     stop("values not recognized")
   }
@@ -29,7 +30,6 @@ ideam2monthly <- function(x, param = NULL, na.rm = NULL){
     stop("parameter not recognized")
   }
 
-  x <- data.frame(x, stringsAsFactors = FALSE)
   date <- strftime(x$date, "%Y-%m")
 
   if(is.null(na.rm)){
