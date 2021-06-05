@@ -4,7 +4,7 @@
 \alias{ideam2annual}
 \title{function for calculate monthly values of prepared data from DHIME (IDEAM, Colombia)}
 \usage{
-ideam2annual(x, param = NULL, na.rm = TRUE)
+ideam2annual(x, param = NULL, na.rm = NULL)
 }
 \arguments{
 \item{x}{dataframe of prepared data of a station from DHIME (IDEAM, Colombia)}
@@ -16,4 +16,7 @@ ideam2annual(x, param = NULL, na.rm = TRUE)
 \description{
 function for calculate monthly values of prepared data from DHIME (IDEAM, Colombia),
 apply to precipitation, minimum and maximum temperature.
+}
+\author{
+Geomar Perales Apaico
 }

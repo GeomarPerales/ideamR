@@ -4,7 +4,7 @@
 \alias{ideam2monthly}
 \title{function for calculate monthly values of prepared data from DHIME (IDEAM, Colombia)}
 \usage{
-ideam2monthly(x, param = NULL, na.rm = TRUE)
+ideam2monthly(x, param = NULL, na.rm = NULL)
 }
 \arguments{
 \item{x}{dataframe of prepared data of a station from DHIME (IDEAM, Colombia).}
