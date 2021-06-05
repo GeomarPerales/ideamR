@@ -19,5 +19,5 @@ Step 2: From Github:
 
 ## Credits
 
-ideamR was developed by Geomar Perales. or any issue or suggestion please write
+ideamR was developed by Geomar Perales Apaico. or any issue or suggestion please write
 to: perales.geomar@gmail.com.
