@@ -10,15 +10,23 @@ ideamsummary <- function(x){
   info <- list()
 
   info$ubication <- data.frame(matrix(NA, 1, 3))
-  colnames(info$ubication) <- c("Longitud","Latitud","Altitud")
+  colnames(info$ubication) <- c("Longitud", "Latitud", "Altitud")
   if("Longitud" %in% names(x)){
     info$ubication[1] <- unique(x$Longitud)
+  } else if(!"Longitud" %in% names(x)){
+    info$ubication[1] <- NA
   }
+
   if("Latitud" %in% names(x)){
     info$ubication[2] <- unique(x$Longitud)
+  } else if(!"Latitud" %in% names(x)){
+    info$ubication[3] <- NA
   }
+
   if("Altitud" %in% names(x)){
     info$ubication[3] <- unique(x$Altitud)
+  } else if(!"Altitud" %in% names(x)){
+    info$ubication[3] <- NA
   }
 
   ini.yr <- as.Date(substr(min(as.character(x$Fecha)), 1, 10))
@@ -28,7 +36,7 @@ ideamsummary <- function(x){
   data <- merge(data, date, by = "date", all = TRUE)
 
   info$ParameterData <- data.frame(matrix(NA, 1, 4))
-  colnames(info$ParameterData) <- c("Inicio","Final","Datos","NAs")
+  colnames(info$ParameterData) <- c("Inicio", "Final", "Datos", "NAs")
   info$ParameterData[1] <- as.Date(substr(min(as.character(x$Fecha)), 1, 10))
   info$ParameterData[2] <- as.Date(substr(max(as.character(x$Fecha)), 1, 10))
   info$ParameterData[3] <- sum(!is.na(data$value))

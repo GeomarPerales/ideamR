@@ -13,13 +13,18 @@ ideamna <- function(x, type = NULL){
   if(!is.data.frame(x)){
     stop("values not recognized")
   }
+  if(!is.null(x$values)){
+    stop("values not recognized")
+  }
+  if(!is.null(x$date)){
+    stop("date not recognized")
+  }
 
-  colnames(x) <- c("date","values")
-  x$value[x$value >= 0] <- 1
-  x$value[is.na(x$value)] <- 0
+  x$value[x$values >= 0] <- 1
+  x$value[is.na(x$values)] <- 0
   date <- strftime(x$date, "%Y-%m")
-  info <- aggregate(as.numeric(as.vector(x$value)), by = list(date), FUN = sum)
-  colnames(info) <- c("date","values")
+  info <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = sum)
+  colnames(info) <- c("date", "values")
 
   ini.yr <- as.numeric(substr(min(as.character(x$date)), 1, 4))
   end.yr <- as.numeric(substr(max(as.character(x$date)), 1, 4))
@@ -33,7 +38,7 @@ ideamna <- function(x, type = NULL){
   if(is.null(type)){
     return(matrix.info)
 
-  }else if(type == "inv"){
+  } else if(type == "inv"){
     days.date <- seq.Date(as.Date(paste0(ini.yr,"-01-01")), as.Date(paste0(end.yr,"-12-31")), by = "days")
     days.sum <-  data.frame(date = days.date, value = 1)
     sum <- aggregate( as.numeric(as.vector(days.sum$value)), by = list(date), FUN = sum)
@@ -43,6 +48,11 @@ ideamna <- function(x, type = NULL){
     colnames(matrix.info) <- month.abb
     rownames(matrix.info) <- seq(ini.yr,end.yr)
     return(matrix.info)
+
+  } else if(is.na(match(type, c("inv")))){
+    stop("type not recognized")
+  } else{
+    stop("level not recognized")
   }
 }
 

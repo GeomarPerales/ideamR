@@ -13,15 +13,23 @@ ideamloc <- function(x){
   }
 
   data <- data.frame(matrix(NA, 1, 3))
-  colnames(data) <- c("Longitud","Latitud","Altitud")
+  colnames(data) <- c("Longitud", "Latitud", "Altitud")
   if("Longitud" %in% names(x)){
     data[1] <- unique(x$Longitud)
+  }else if(!"Longitud" %in% names(x)){
+    data[1] <- NA
   }
+
   if("Latitud" %in% names(x)){
     data[2] <- unique(x$Longitud)
+  }else if(!"Latitud" %in% names(x)){
+    data[2] <- NA
   }
+
   if("Altitud" %in% names(x)){
     data[3] <- unique(x$Altitud)
+  }else if(!"Altitud" %in% names(x)){
+    data[3] <- NA
   }
 
   return(data)
