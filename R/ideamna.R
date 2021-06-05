@@ -13,10 +13,10 @@ ideamna <- function(x, type = NULL){
   if(!is.data.frame(x)){
     stop("values not recognized")
   }
-  if(!is.null(x$values)){
+  if(is.null(x$values)){
     stop("values not recognized")
   }
-  if(!is.null(x$date)){
+  if(is.null(x$date)){
     stop("date not recognized")
   }
 

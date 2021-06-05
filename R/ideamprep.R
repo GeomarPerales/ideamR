@@ -3,10 +3,10 @@
 #' function for prepare data from DHIME (IDEAM, Colombia), apply to precipitation,
 #' minimum and maximum temperature.
 #' @param x dataframe of a station from DHIME (IDEAM, Colombia).
-#' @param level information level of dataframe, default information is standard.
-#' standard: dataframe of date, station, parameter and parameter values
-#' basic: dataframe of date and parameter values
-#' advanced: dataframe of date, station, parameter, latitude, longitude, height and parameter values
+#' @param level prepared information level of station data, default information is standard. standard level:
+#' dataframe of date, station, parameter and parameter values, basic level : dataframe of date and
+#' parameter values. advanced level: dataframe of date, station, parameter, latitude, longitude,
+#' height and parameter values
 #' @export
 #' @name ideamprep
 
