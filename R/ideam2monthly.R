@@ -11,7 +11,7 @@
 
 ideam2monthly <-function(x, ...) UseMethod("ideam2monthly")
 
-ideam2monthly <- function(x, param = NULL, na.rm = NULL){
+ideam2monthly <- function(x, param = NULL, na.rm = TRUE){
 
   x <- data.frame(x, stringsAsFactors = FALSE)
   if(is.null(x)){
@@ -33,7 +33,7 @@ ideam2monthly <- function(x, param = NULL, na.rm = NULL){
   date <- strftime(x$date, "%Y-%m")
 
   if(isTRUE(na.rm)){
-    x[is.na(x$values),][,2] <- 0
+    x$values <- ifelse(is.na(x$values), 0, x$values)
     values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
     values.sum <- data.frame(values.sum, stringsAsFactors = FALSE)
 

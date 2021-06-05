@@ -14,7 +14,7 @@
 
 ideam2annual <-function(x, ...) UseMethod("ideam2annual")
 
-ideam2annual <- function(x, param = NULL, na.rm = NULL){
+ideam2annual <- function(x, param = NULL, na.rm = TRUE){
 
   x <- data.frame(x, stringsAsFactors = FALSE)
   if(is.null(x)){
