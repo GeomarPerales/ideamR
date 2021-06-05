@@ -34,7 +34,9 @@ ideam2annual <- function(x, param = NULL, na.rm = NULL){
     stop("parameter not recognized")
   }
 
+  x <- data.frame(x, stringsAsFactors = FALSE)
   date = strftime(x$date, "%Y")
+
   if(is.null(na.rm)){
     x[is.na(x$values),][,2] <- 0
     annual.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
