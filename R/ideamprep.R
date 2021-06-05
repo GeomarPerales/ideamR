@@ -73,6 +73,7 @@ ideamprep <- function(x, level = NULL){
                        altitud = as.numeric(x$Altitud[1]),
                        values = x$Valor)
     data <- merge(data, date, by = "date", all = TRUE)
+    data <-data.frame(data, stringsAsFactors = FALSE)
     return(data)
 
   } else if(is.na(match(level, c("standard", "basic", "advanced")))){
