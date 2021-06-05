@@ -14,7 +14,7 @@ Step 2: From Github:
 
 ``` r
 > library(devtools)
-> install_github("GeomarPerales/ideamR")
+> install_github("GeomarPerales/RPisco")
 ```
 ## Example
 
