@@ -46,11 +46,13 @@ ideamprep <- function(x, level = NULL){
                        station = as.character(x$NombreEstacion[1]),
                        param = as.character(x$IdParametro[1]), values = x$Valor)
     data <- merge(data, date, by = "date", all = TRUE)
+    data <-data.frame(data, stringsAsFactors = FALSE)
     return(data)
 
   } else if(level == "basic"){
     data <- data.frame(date = as.Date(substr(x$Fecha, 1, 10)), values = x$Valor)
     data <- merge(data, date, by = "date", all = TRUE)
+    data <-data.frame(data, stringsAsFactors = FALSE)
     return(data)
 
   } else if(level == "advanced"){
