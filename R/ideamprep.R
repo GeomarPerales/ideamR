@@ -24,6 +24,7 @@ ideamprep <- function(x){
 
   data <- data.frame(date = as.Date(substr(x$Fecha, 1, 10)), values = x$Valor)
   data <- merge(data, date, by = "date", all = TRUE)
+  colnames(data) <- c("date", "values")
   return(data)
 
 }

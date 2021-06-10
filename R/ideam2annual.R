@@ -16,6 +16,7 @@ ideam2annual <-function(x, ...) UseMethod("ideam2annual")
 
 ideam2annual <- function(x, param = NULL, na.rm = TRUE){
 
+  colnames(data) <- c("date", "values")
   x <- data.frame(x, stringsAsFactors = FALSE)
   if(is.null(x)){
     stop("values not recognized")
@@ -23,13 +24,13 @@ ideam2annual <- function(x, param = NULL, na.rm = TRUE){
 
   if(is.null(param)){
     opt = "sum"
-
   } else if(param == "sum"){
     opt = "sum"
-
   } else if(param == "mean"){
     opt = "mean"
   } else if(is.na(match(param, c("sum","mean")))){
+    stop("parameter not recognized")
+  } else{
     stop("parameter not recognized")
   }
 
@@ -41,7 +42,7 @@ ideam2annual <- function(x, param = NULL, na.rm = TRUE){
     annual.sum <- data.frame(annual.sum, stringsAsFactors = FALSE)
 
   } else if(!isTRUE(na.rm)){
-    annual.sum <- aggregate( as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
+    annual.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
   }
 
   colnames(annual.sum) <- c("date","values")

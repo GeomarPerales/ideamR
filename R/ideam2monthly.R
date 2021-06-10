@@ -7,12 +7,16 @@
 #' @param na.rm default value is TRUE, TRUE for consider NA, FALSE for not consider NA.
 #' @import stats
 #' @export
+#'
+#' @author Geomar Perales Apaico
+#'
 #' @name ideam2monthly
 
 ideam2monthly <-function(x, ...) UseMethod("ideam2monthly")
 
 ideam2monthly <- function(x, param = NULL, na.rm = TRUE){
 
+  colnames(data) <- c("date", "values")
   x <- data.frame(x, stringsAsFactors = FALSE)
   if(is.null(x)){
     stop("values not recognized")
@@ -39,7 +43,6 @@ ideam2monthly <- function(x, param = NULL, na.rm = TRUE){
 
   } else if(!isTRUE(na.rm)){
     values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
-
   }
 
   colnames(values.sum) <- c("date","values")
