@@ -31,8 +31,6 @@ ideam2annual <- function(x, param = NULL, na.rm = TRUE){
     opt = "mean"
   } else if(is.na(match(param, c("sum","mean")))){
     stop("parameter not recognized")
-  } else{
-    stop("parameter not recognized")
   }
 
   date = strftime(x$date, "%Y")
@@ -40,7 +38,7 @@ ideam2annual <- function(x, param = NULL, na.rm = TRUE){
   if(isTRUE(na.rm)){
     x[is.na(x$values),][,2] <- 0
     annual.sum <- aggregate( as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
-    annual.sum <- data.frame(annual.sum, stringsAsFactors = FALSE)
+    annual.sum <- data.frame(annual.sum)
 
   } else if(!isTRUE(na.rm)){
     annual.sum <- aggregate( as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
