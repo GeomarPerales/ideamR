@@ -27,9 +27,7 @@ ideamprep <- function(x, level = NULL){
   date <- data.frame(date = seq.Date(ini.yr, end.yr, by = "days"))
 
   if(is.null(level)){
-    data <- data.frame(date = as.Date(substr(x$Fecha, 1, 10)),
-                       station = as.character(x$NombreEstacion[1]),
-                       param = as.character(x$IdParametro[1]), values = x$Valor)
+    data <- data.frame(date = as.Date(substr(x$Fecha, 1, 10)), values = x$Valor)
     data <- merge(data, date, by = "date", all = TRUE)
     return(data)
 
@@ -42,9 +40,7 @@ ideamprep <- function(x, level = NULL){
       stop("IdParametro column not recognized or not exist, standard and advanced level is not possible")
     }
 
-    data <- data.frame(date = as.Date(substr(x$Fecha, 1, 10)),
-                       station = as.character(x$NombreEstacion[1]),
-                       param = as.character(x$IdParametro[1]), values = x$Valor)
+    data <- data.frame(date = as.Date(substr(x$Fecha, 1, 10)), values = x$Valor)
     data <- merge(data, date, by = "date", all = TRUE)
     data <-data.frame(data, stringsAsFactors = FALSE)
     return(data)
