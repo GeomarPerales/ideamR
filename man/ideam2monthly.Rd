@@ -17,3 +17,6 @@ ideam2monthly(x, param = NULL, na.rm = TRUE)
 function for calculate monthly values of prepared data from DHIME (IDEAM, Colombia),
 apply to precipitation, minimum and maximum temperature.
 }
+\author{
+Geomar Perales Apaico
+}
