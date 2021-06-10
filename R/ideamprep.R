@@ -4,6 +4,9 @@
 #' minimum and maximum temperature.
 #' @param x dataframe of a station from DHIME (IDEAM, Colombia).
 #' @export
+#'
+#' @author Geomar Perales Apaico
+#'
 #' @name ideamprep
 
 ideamprep <- function(x){
@@ -24,6 +27,7 @@ ideamprep <- function(x){
 
   data <- data.frame(date = as.Date(substr(x$Fecha, 1, 10)), values = x$Valor)
   data <- merge(data, date, by = "date", all = TRUE)
+  data <- data.frame(data, stringsAsFactors = FALSE)
   colnames(data) <- c("date", "values")
   return(data)
 
