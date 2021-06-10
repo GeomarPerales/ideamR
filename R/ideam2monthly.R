@@ -40,13 +40,16 @@ ideam2monthly <- function(x, param = NULL, na.rm = TRUE){
     x$values <- ifelse(is.na(x$values), 0, x$values)
     values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
     values.sum <- data.frame(values.sum, stringsAsFactors = FALSE)
+    colnames(values.sum) <- c("date","values")
+    return(values.sum)
 
   } else if(!isTRUE(na.rm)){
     values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
+    colnames(values.sum) <- c("date","values")
+    return(values.sum)
   }
 
-  colnames(values.sum) <- c("date","values")
-  return(values.sum)
+
 }
 
 #' @rdname ideam2monthly

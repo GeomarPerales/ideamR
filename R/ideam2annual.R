@@ -40,13 +40,16 @@ ideam2annual <- function(x, param = NULL, na.rm = TRUE){
     x$values <- ifelse(is.na(x$values), 0, x$values)
     annual.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
     annual.sum <- data.frame(annual.sum, stringsAsFactors = FALSE)
+    colnames(annual.sum) <- c("date","values")
+    return(annual.sum)
 
   } else if(!isTRUE(na.rm)){
     annual.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
+    colnames(annual.sum) <- c("date","values")
+    return(annual.sum)
   }
 
-  colnames(annual.sum) <- c("date","values")
-  return(annual.sum)
+
 
 }
 
