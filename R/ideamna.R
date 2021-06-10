@@ -45,8 +45,6 @@ ideamna <- function(x, type = NULL){
 
   } else if(is.na(match(type, c("inv")))){
     stop("type not recognized")
-  } else{
-    stop("level not recognized")
   }
 }
 
