@@ -36,9 +36,9 @@ ideam2annual <- function(x, param = NULL, na.rm = TRUE){
   date = strftime(x$date, "%Y")
 
   if(isTRUE(na.rm)){
-    x[is.na(x$values),][,2] <- 0
-    annual.sum <- aggregate( as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
-    annual.sum <- data.frame(annual.sum)
+    x$values <- ifelse(is.na(x$values), 0, x$values)
+    annual.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
+    annual.sum <- data.frame(annual.sum, stringsAsFactors = FALSE)
 
   } else if(!isTRUE(na.rm)){
     annual.sum <- aggregate( as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
