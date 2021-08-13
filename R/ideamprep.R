@@ -7,6 +7,9 @@
 #'
 #' @author Geomar Perales Apaico
 #'
+#' @examples
+#' ideamprep(Bucaramanga)
+#'
 #' @name ideamprep
 
 ideamprep <- function(x){

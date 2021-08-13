@@ -10,6 +10,10 @@
 #'
 #' @author Geomar Perales Apaico
 #'
+#' @examples
+#' data <- ideamprep(Bucaramanga)
+#' ideam2annual(data)
+#'
 #' @name ideam2annual
 
 ideam2annual <-function(x, ...) UseMethod("ideam2annual")

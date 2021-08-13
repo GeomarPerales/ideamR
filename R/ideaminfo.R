@@ -3,6 +3,12 @@
 #' function for obtain information about data downloaded of station from DHIME (IDEAM, Colombia),
 #' apply to precipitation, minimum and maximum temperature.
 #' @param x dataframe of a station from DHIME (IDEAM, Colombia).
+#'
+#' @author Geomar Perales Apaico
+#'
+#' @examples
+#' ideaminfo(Bucaramanga)
+#'
 #' @export
 #' @name ideaminfo
 

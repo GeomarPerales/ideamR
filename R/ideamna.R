@@ -5,6 +5,13 @@
 #' @param x dataframe of prepared data of a station from DHIME (IDEAM, Colombia).
 #' @param type default value is NULL, NULL is for days without information by month, inv is for days with information by month.
 #' @import stats
+#'
+#' @author Geomar Perales Apaico
+#'
+#' @examples
+#' data <- ideamprep(Bucaramanga)
+#' ideamna(data)
+#'
 #' @export
 #' @name ideamna
 
