@@ -17,6 +17,11 @@ ideam2annual(x, param = NULL, na.rm = TRUE)
 function for calculate monthly values of prepared data from DHIME (IDEAM, Colombia),
 apply to precipitation, minimum and maximum temperature.
 }
+\examples{
+data <- ideamprep(Bucaramanga)
+ideam2annual(data)
+
+}
 \author{
 Geomar Perales Apaico
 }

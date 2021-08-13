@@ -13,3 +13,10 @@ ideamloc(x)
 function for obtain location of data downloaded of station from DHIME (IDEAM, Colombia),
 apply to precipitation, minimum and maximum temperature.
 }
+\examples{
+ideamloc(Bucaramanga)
+
+}
+\author{
+Geomar Perales Apaico
+}

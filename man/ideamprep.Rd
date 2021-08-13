@@ -13,6 +13,10 @@ ideamprep(x)
 function for prepare data from DHIME (IDEAM, Colombia), apply to precipitation,
 minimum and maximum temperature.
 }
+\examples{
+ideamprep(Bucaramanga)
+
+}
 \author{
 Geomar Perales Apaico
 }

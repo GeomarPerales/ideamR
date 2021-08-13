@@ -15,3 +15,11 @@ ideamna(x, type = NULL)
 function for calculate days without information by month of prepared data of station from DHIME (IDEAM, Colombia),
 apply to precipitation, minimum and maximum temperature.
 }
+\examples{
+data <- ideamprep(Bucaramanga)
+ideamna(data)
+
+}
+\author{
+Geomar Perales Apaico
+}
