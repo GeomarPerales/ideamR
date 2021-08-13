@@ -47,11 +47,21 @@ ideam2annual <- function(x, param = NULL, na.rm = TRUE){
     annual.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
     annual.sum <- data.frame(annual.sum, stringsAsFactors = FALSE)
     colnames(annual.sum) <- c("date","values")
+
+    ini.yr <- as.Date(paste0(min(as.character(annual.sum$date)), "-01-01"))
+    end.yr <- as.Date(paste0(max(as.character(annual.sum$date)), "-12-01"))
+    annual.sum$date <- data.frame(date = seq.Date(ini.yr, end.yr, by = "year"))
+
     return(annual.sum)
 
   } else if(!isTRUE(na.rm)){
     annual.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
     colnames(annual.sum) <- c("date","values")
+
+    ini.yr <- as.Date(paste0(min(as.character(annual.sum$date)), "-01-01"))
+    end.yr <- as.Date(paste0(max(as.character(annual.sum$date)), "-12-01"))
+    annual.sum$date <- data.frame(date = seq.Date(ini.yr, end.yr, by = "year"))
+
     return(annual.sum)
   }
 
