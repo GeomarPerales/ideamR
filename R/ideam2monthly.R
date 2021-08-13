@@ -3,7 +3,7 @@
 #' function for calculate monthly values of prepared data from DHIME (IDEAM, Colombia),
 #' apply to precipitation, minimum and maximum temperature.
 #' @param x dataframe of prepared data of a station from DHIME (IDEAM, Colombia).
-#' @param param default value is sum, sum is for precipitation and evaporation, mean for temperature and relative humidity.
+#' @param param default value is sum, sum is for precipitation and evaporation, mean for temperature and relative humidity, max for maximum values.
 #' @param na.rm default value is TRUE, TRUE for consider NA, FALSE for not consider NA.
 #' @import stats
 #' @export
@@ -28,7 +28,9 @@ ideam2monthly <- function(x, param = NULL, na.rm = TRUE){
     opt = "sum"
   } else if(param == "mean"){
     opt = "mean"
-  } else if(is.na(match(param, c("sum","mean")))){
+  } else if(param == "max"){
+    opt = "max"
+  } else if(is.na(match(param, c("sum", "mean", "max")))){
     stop("parameter not recognized")
   } else{
     stop("parameter not recognized")
@@ -47,8 +49,7 @@ ideam2monthly <- function(x, param = NULL, na.rm = TRUE){
     values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
     colnames(values.sum) <- c("date","values")
     return(values.sum)
-  }
+  }}
 
-}
 
 #' @rdname ideam2monthly
