@@ -47,11 +47,21 @@ ideam2monthly <- function(x, param = NULL, na.rm = TRUE){
     values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
     values.sum <- data.frame(values.sum, stringsAsFactors = FALSE)
     colnames(values.sum) <- c("date","values")
+
+    ini.yr <- as.Date(paste0(min(as.character(values.sum$date)), "-01-01"))
+    end.yr <- as.Date(paste0(max(as.character(values.sum$date)), "-12-01"))
+    values.sum$date <- data.frame(date = seq.Date(ini.yr, end.yr, by = "month"))
+
     return(values.sum)
 
   } else if(!isTRUE(na.rm)){
     values.sum <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = opt)
     colnames(values.sum) <- c("date","values")
+
+    ini.yr <- as.Date(paste0(min(as.character(values.sum$date)), "-01-01"))
+    end.yr <- as.Date(paste0(max(as.character(values.sum$date)), "-12-01"))
+    values.sum$date <- data.frame(date = seq.Date(ini.yr, end.yr, by = "month"))
+
     return(values.sum)
   }}
 
