@@ -49,8 +49,6 @@ ideam2annual <- function(x, param = NULL, na.rm = TRUE){
     return(annual.sum)
   }
 
-
-
 }
 
 #' @rdname ideam2annual

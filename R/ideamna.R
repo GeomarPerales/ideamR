@@ -17,7 +17,7 @@ ideamna <- function(x, type = NULL){
   x$value[x$values >= 0] <- 1
   x$value[is.na(x$values)] <- 0
   date <- strftime(x$date, "%Y-%m")
-  info <- aggregate(as.numeric(as.vector(x$values)), by = list(date), FUN = sum)
+  info <- aggregate(as.numeric(as.vector(x$value)), by = list(date), FUN = sum)
   colnames(info) <- c("date", "values")
 
   ini.yr <- as.numeric(substr(min(as.character(x$date)), 1, 4))

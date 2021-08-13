@@ -49,7 +49,6 @@ ideam2monthly <- function(x, param = NULL, na.rm = TRUE){
     return(values.sum)
   }
 
-
 }
 
 #' @rdname ideam2monthly
