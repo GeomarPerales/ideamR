@@ -60,11 +60,10 @@ ideam2annual <- function(x, param = NULL, na.rm = TRUE){
 
     ini.yr <- as.Date(paste0(min(as.character(annual.sum$date)), "-01-01"))
     end.yr <- as.Date(paste0(max(as.character(annual.sum$date)), "-12-01"))
-    annual.sum$date <- data.frame(date = seq.Date(ini.yr, end.yr, by = "year"))
+    annual.sum[,1] <- data.frame(date = seq.Date(ini.yr, end.yr, by = "year"))
 
     return(annual.sum)
   }
-
 }
 
 #' @rdname ideam2annual
