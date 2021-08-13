@@ -6,11 +6,11 @@ ideamR is a package for hydrometeorological data management from DHIME (IDEAM, C
 
 You can install the released version of ideamR from Github with:
 
-Step 1: Install devtools:
+Step 1: Install devtools from CRAN:
 ```	
 > install.packages("devtools")
 ```
-Step 2: From Github:
+Step 2: Install ideamR from Github:
 
 ``` r
 > library(devtools)
