@@ -43,11 +43,11 @@ head(station.summary)
 data.prep <- ideamprep(Bucaramanga)
 head(data.prep)
 
-# monthly time serie from bucaramanga station 
+# monthly time serie from bucaramanga station (daily to monthly)
 monthly.ts <- ideam2monthly(data.prep)
 head(monthly.ts)
 
-# annual time serie from bucaramanga station  
+# annual time serie from bucaramanga station (daily to annual)
 annual.ts <- ideam2annual(data.prep)
 head(annual.ts)
 
