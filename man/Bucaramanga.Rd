@@ -15,4 +15,7 @@ Bucaramanga
 A dataframe of Bucaramanga station from IDEAM (Colombia), data downloaded of precipitation
 from DHIME (IDEAM, Colombia).
 }
+\examples{
+data(Bucaramanga)
+}
 \keyword{datasets}
