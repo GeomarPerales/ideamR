@@ -24,8 +24,8 @@ ideamprep <- function(x){
     stop("valor column not recognized or not exist")
   }
 
-  ini.yr <- as.Date(substr(min(as.character(x$Fecha)), 1, 10))
-  end.yr <- as.Date(substr(max(as.character(x$Fecha)), 1, 10))
+  ini.yr <- as.Date(paste0(substr(min(as.character(x$Fecha)),1,4),"-01-01"))
+  end.yr <- as.Date(paste0(substr(max(as.character(x$Fecha)),1,4),"-01-01"))
   date <- data.frame(date = seq.Date(ini.yr, end.yr, by = "days"))
 
   data <- data.frame(date = as.Date(substr(x$Fecha, 1, 10)), values = x$Valor)
