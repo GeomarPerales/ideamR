@@ -1,6 +1,6 @@
 # ideamR
 
-ideamR is a package for hydrometeorological data management from DHIME (IDEAM, Colombia). DHIME is Information System for the management of Hydrological and Meteorological data from Colombia.
+ideamR is a package for hydrometeorological data management from DHIME (IDEAM, Colombia). DHIME is an Information System for the management of Hydrological and Meteorological data from Colombia. functions from ideamR are for precipitation, maximum and minimum temperature.
 
 ## Installation
 
@@ -19,7 +19,7 @@ Step 2: From Github:
 
 ## Example
 
-In this example, I use daily precipitation data from Bucaramanga station for run ideamR.
+In this example, I use daily precipitation data from Bucaramanga (Santander, Colombia) station for run ideamR.
 
 ```	
 library(ideamR)
@@ -37,7 +37,7 @@ head(station.loc)
 station.summary <- ideamsummary(Bucaramanga)
 head(station.summary)
 
-#data prepared from Bucaramanga station  
+#data preparation from Bucaramanga station
 data.prep <- ideamprep(Bucaramanga)
 head(data.prep)
 
