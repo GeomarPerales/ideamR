@@ -60,7 +60,7 @@ ideam2monthly <- function(x, param = NULL, na.rm = TRUE){
 
     ini.yr <- as.Date(paste0(min(as.character(values.sum$date)), "-01-01"))
     end.yr <- as.Date(paste0(max(as.character(values.sum$date)), "-12-01"))
-    values.sum$date <- data.frame(date = seq.Date(ini.yr, end.yr, by = "month"))
+    values.sum[,1] <- data.frame(date = seq.Date(ini.yr, end.yr, by = "month"))
 
     return(values.sum)
   }}
