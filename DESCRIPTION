@@ -1,7 +1,6 @@
 Package: ideamR
 Type: Package
-Title: Tools for hydrometeorological data management from DHIME (IDEAM,
-        Colombia)
+Title: Tools for hydrometeorological data management from DHIME (IDEAM, Colombia)
 Version: 0.1.0
 Author: Geomar Perales Apaico
 Maintainer: Geomar Perales Apaico, <perales.geomar@gmail.com>
@@ -12,6 +11,5 @@ Encoding: UTF-8
 LazyData: true
 Date/Publication: 2021-05-26
 RoxygenNote: 7.1.1
-Depends: R (>= 2.10)
-NeedsCompilation: no
-Packaged: 2021-06-05 19:56:54 UTC; gperales
+Depends: 
+    R (>= 2.10)
