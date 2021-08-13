@@ -8,11 +8,11 @@ A goal from ideamR is meteorological data preparation for use it in R.
 
 You can install the released version of ideamR from Github with:
 
-Step 1: Install devtools from CRAN:
+Step 1: Install devtools from CRAN
 ```	
 > install.packages("devtools")
 ```
-Step 2: Install ideamR from Github:
+Step 2: Install ideamR from Github
 
 ``` r
 > library(devtools)
